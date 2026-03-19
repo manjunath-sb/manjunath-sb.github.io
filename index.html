@@ -121,7 +121,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
 
       padding: 6px 12px;
       font-size: 12px;
@@ -141,13 +141,20 @@
       border-color: rgba(56,189,248,0.7);
     }
 
-    .btn .arrow {
+    /* Clean chevron arrow */
+    .arrow {
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid rgba(56,189,248,0.9);
+      border-bottom: 2px solid rgba(56,189,248,0.9);
+      transform: rotate(45deg);
       display: inline-block;
       transition: transform 0.3s ease;
+      margin-top: -2px;
     }
 
-    .card.active .btn .arrow {
-      transform: rotate(180deg);
+    .card.active .arrow {
+      transform: rotate(225deg);
     }
   </style>
 </head>
@@ -174,7 +181,7 @@
 
       <div class="cta">
         <button class="btn" onclick="toggleCard(this)">
-          View Details <span class="arrow">⌄</span>
+          View Details <span class="arrow"></span>
         </button>
       </div>
 
@@ -205,7 +212,7 @@
 
       <div class="cta">
         <button class="btn" onclick="toggleCard(this)">
-          View Details <span class="arrow">⌄</span>
+          View Details <span class="arrow"></span>
         </button>
       </div>
 
