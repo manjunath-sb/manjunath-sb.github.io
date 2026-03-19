@@ -112,21 +112,31 @@
       text-decoration: underline;
     }
 
+    .cta {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
     .btn {
-      margin-top: 12px;
-      padding: 6px 12px;
-      font-size: 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(56,189,248,0.3);
-      background: rgba(56,189,248,0.05);
+      display: inline-block;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 8px;
+
+      border: 1px solid rgba(56,189,248,0.6);
+      background: rgba(56,189,248,0.12);
       color: #38bdf8;
+
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.25s ease;
     }
 
     .btn:hover {
-      background: rgba(56,189,248,0.15);
-      border-color: rgba(56,189,248,0.6);
+      background: linear-gradient(90deg, #38bdf8, #22c55e);
+      color: #0f172a;
+      box-shadow: 0 0 12px rgba(56,189,248,0.4);
     }
   </style>
 </head>
@@ -151,7 +161,9 @@
         <span>Deterministic</span>
       </div>
 
-      <button class="btn" onclick="toggleCard(this)">View Details</button>
+      <div class="cta">
+        <button class="btn" onclick="toggleCard(this)">View Details →</button>
+      </div>
 
       <div class="details">
         <p><strong>Architecture:</strong></p>
@@ -178,7 +190,9 @@
         <span>Validation</span>
       </div>
 
-      <button class="btn" onclick="toggleCard(this)">View Details</button>
+      <div class="cta">
+        <button class="btn" onclick="toggleCard(this)">View Details →</button>
+      </div>
 
       <div class="details">
         <p><strong>Architecture:</strong></p>
