@@ -41,43 +41,11 @@
       margin-bottom: 10px;
     }
 
-    h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      color: #cbd5f5;
-      line-height: 1.7;
-    }
-
-    .subtitle {
-      color: #94a3b8;
-      margin-bottom: 30px;
-      font-size: 18px;
-    }
-
-    .section {
-      margin-top: 60px;
-    }
-
     h2 {
       font-size: 24px;
       margin-bottom: 20px;
       border-left: 4px solid #38bdf8;
       padding-left: 10px;
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      left: -4px;
-      top: 0;
-      height: 100%;
-      width: 4px;
-      background: #38bdf8;
-      box-shadow: 0 0 6px rgba(56,189,248,0.5);
     }
 
     .card {
@@ -85,24 +53,14 @@
       padding: 22px;
       border-radius: 12px;
       margin-bottom: 20px;
-      transition: all 0.3s ease;
       border: 1px solid rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35),
-                  0 0 15px rgba(56,189,248,0.08);
-    }
-
-    .links a {
-      color: #38bdf8;
-      text-decoration: none;
-      margin-right: 15px;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
+      transform: translateY(-4px);
+      box-shadow: 0 0 12px rgba(56,189,248,0.08);
     }
 
     .status {
@@ -115,89 +73,15 @@
       color: #38bdf8;
     }
 
-    .flow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+    .details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 10px;
     }
 
-    .node {
-      background: #1e293b;
-      padding: 12px 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      border: 1px solid #334155;
-      transition: all 0.25s ease;
-      position: relative;
-      animation: glowNode 4s infinite;
-    }
-
-    .node::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 8px;
-      opacity: 0;
-      background: rgba(56,189,248,0.05);
-      transition: 0.3s;
-    }
-
-    .node:hover::after {
-      opacity: 1;
-    }
-
-    .node:hover {
-      background: #334155;
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 0 10px rgba(56,189,248,0.08);
-    }
-
-    .arrow {
-      color: #64748b;
-      opacity: 0.4;
-      animation: pulseArrow 1.5s infinite;
-    }
-
-    .arrow:nth-child(2) { animation-delay: 0s; }
-    .arrow:nth-child(4) { animation-delay: 0.2s; }
-    .arrow:nth-child(6) { animation-delay: 0.4s; }
-    .arrow:nth-child(8) { animation-delay: 0.6s; }
-
-    @keyframes pulseArrow {
-      0% {
-        opacity: 0.2;
-        transform: translateX(0px);
-      }
-      50% {
-        opacity: 0.8;
-        transform: translateX(3px);
-        color: #38bdf8;
-      }
-      100% {
-        opacity: 0.2;
-        transform: translateX(0px);
-      }
-    }
-
-    .flow .node:nth-child(1) { animation-delay: 0s; }
-    .flow .node:nth-child(3) { animation-delay: 0.5s; }
-    .flow .node:nth-child(5) { animation-delay: 1s; }
-    .flow .node:nth-child(7) { animation-delay: 1.5s; }
-    .flow .node:nth-child(9) { animation-delay: 2s; }
-
-    @keyframes glowNode {
-      0%, 100% {
-        box-shadow: none;
-      }
-      50% {
-        box-shadow: 0 0 10px rgba(56,189,248,0.08);
-      }
-    }
-
-    .tags {
-      margin-top: 12px;
+    .card.active .details {
+      max-height: 300px;
     }
 
     .tags span {
@@ -208,7 +92,15 @@
       font-size: 12px;
       border-radius: 6px;
       margin-right: 6px;
+      margin-top: 8px;
     }
+
+    .flow {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
   </style>
 </head>
 
@@ -217,68 +109,72 @@
 <div class="container">
 
   <h1>Manjunath S B</h1>
-  <p class="subtitle">
-    Applied AI Engineer | Multi-Agent Systems | LLM Backend
-  </p>
-
-  <p style="max-width: 700px; font-size: 16px;">
-    Building production-grade AI systems focused on deterministic decision-making, structured outputs, and scalable multi-agent architectures.
-  </p>
+  <p>Applied AI Engineer | Multi-Agent Systems | LLM Backend</p>
 
   <div class="section">
     <h2>Systems</h2>
 
-    <div class="card">
+    <!-- CARD 1 -->
+    <div class="card" onclick="toggleCard(this)">
       <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
-      <p>
-        Multi-agent AI system with orchestrator–worker–aggregator architecture, structured outputs, and backend orchestration.
-      </p>
+      <p>Multi-agent AI system with structured outputs.</p>
+
       <div class="tags">
         <span>LLM</span>
         <span>Multi-Agent</span>
         <span>Deterministic</span>
       </div>
+
+      <div class="details">
+        <p><strong>Architecture:</strong></p>
+        <div class="flow">
+          Input → Orchestrator → Agents → Aggregator → Output
+        </div>
+
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>Parallel agent execution</li>
+          <li>Structured JSON outputs</li>
+          <li>Deterministic scoring system</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="card">
+    <!-- CARD 2 -->
+    <div class="card" onclick="toggleCard(this)">
       <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
-      <p>
-        Hybrid AI system combining LLM reasoning with deterministic evaluation and structured pipelines.
-      </p>
+      <p>Hybrid AI system combining LLM reasoning with deterministic logic.</p>
+
       <div class="tags">
         <span>LLM</span>
-        <span>Decision System</span>
+        <span>Decision</span>
         <span>Validation</span>
+      </div>
+
+      <div class="details">
+        <p><strong>Architecture:</strong></p>
+        <div class="flow">
+          Data → Processing → Evaluation → Decision Output
+        </div>
+
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>Deterministic validation layer</li>
+          <li>Structured insight generation</li>
+          <li>Modular pipeline design</li>
+        </ul>
       </div>
     </div>
 
   </div>
 
-  <div class="section">
-    <h2>Architecture</h2>
-
-    <div class="flow">
-      <div class="node">Input</div>
-      <div class="arrow">→</div>
-      <div class="node">Orchestrator</div>
-      <div class="arrow">→</div>
-      <div class="node">Agents</div>
-      <div class="arrow">→</div>
-      <div class="node">Aggregator</div>
-      <div class="arrow">→</div>
-      <div class="node">Output</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Endpoints</h2>
-    <div class="links">
-      <a href="https://github.com/manjunath-sb">GitHub</a>
-      <a href="https://linkedin.com/in/manjunath-sb">LinkedIn</a>
-    </div>
-  </div>
-
 </div>
+
+<script>
+  function toggleCard(card) {
+    card.classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
