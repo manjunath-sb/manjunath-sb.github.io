@@ -50,6 +50,7 @@
     .card:hover {
       transform: translateY(-5px);
       background: #334155;
+      box-shadow: 0 0 20px rgba(56,189,248,0.2);
     }
 
     .links a {
@@ -62,6 +63,41 @@
       text-decoration: underline;
     }
 
+    .status {
+      font-size: 12px;
+      margin-left: 10px;
+      color: #22c55e;
+    }
+
+    .status.stable {
+      color: #38bdf8;
+    }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .node {
+      background: #1e293b;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      border: 1px solid #334155;
+      transition: 0.3s;
+    }
+
+    .node:hover {
+      background: #334155;
+      transform: translateY(-2px);
+    }
+
+    .arrow {
+      color: #64748b;
+    }
   </style>
 </head>
 
@@ -79,17 +115,17 @@
   </p>
 
   <div class="section">
-    <h2>Projects</h2>
+    <h2>Systems</h2>
 
     <div class="card">
-      <h3>Agentic AI Platform</h3>
+      <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
       <p>
         Multi-agent AI system with orchestrator–worker–aggregator architecture, structured outputs, and backend orchestration.
       </p>
     </div>
 
     <div class="card">
-      <h3>Options Decision AI System</h3>
+      <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
       <p>
         Hybrid AI system combining LLM reasoning with deterministic evaluation and structured pipelines.
       </p>
@@ -98,14 +134,23 @@
   </div>
 
   <div class="section">
-    <h2>System Design</h2>
-    <p>
-      Input → Orchestration → Agents → Processing → Structured Output
-    </p>
+    <h2>Architecture</h2>
+
+    <div class="flow">
+      <div class="node">Input</div>
+      <div class="arrow">→</div>
+      <div class="node">Orchestrator</div>
+      <div class="arrow">→</div>
+      <div class="node">Agents</div>
+      <div class="arrow">→</div>
+      <div class="node">Aggregator</div>
+      <div class="arrow">→</div>
+      <div class="node">Output</div>
+    </div>
   </div>
 
   <div class="section">
-    <h2>Links</h2>
+    <h2>Endpoints</h2>
     <div class="links">
       <a href="https://github.com/manjunath-sb">GitHub</a>
       <a href="https://linkedin.com/in/manjunath-sb">LinkedIn</a>
