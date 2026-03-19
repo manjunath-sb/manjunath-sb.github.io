@@ -170,46 +170,62 @@
     <h2>Systems</h2>
 
     <div class="card">
-      <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
-      <p>Multi-agent AI system with structured outputs.</p>
-
-      <div class="tags">
-        <span>LLM</span>
-        <span>Multi-Agent</span>
-        <span>Deterministic</span>
-      </div>
+        <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
+        <p>
+        Production-grade multi-agent AI system designed for structured decision-making from unstructured inputs.
+        </p>
+        
+        <div class="tags">
+          <span>Multi-Agent</span>
+          <span>AWS Bedrock</span>
+          <span>Deterministic AI</span>
+        </div>
 
       <div class="cta">
         <button class="btn" onclick="toggleCard(this)">
           View Details <span class="arrow"></span>
         </button>
       </div>
-
+      
       <div class="details">
         <p><strong>Architecture:</strong></p>
         <div class="flow">
-          Input → Orchestrator → Agents → Aggregator → Output
+          Input → Orchestrator → Parallel Agents → Aggregator → Structured Output
         </div>
-
-        <p><strong>Key Features:</strong></p>
+      
+        <p><strong>System Design:</strong></p>
         <ul>
-          <li>Parallel agent execution</li>
-          <li>Structured JSON outputs</li>
-          <li>Deterministic scoring system</li>
+          <li>Orchestrator–worker–aggregator architecture with parallel execution</li>
+          <li>Strict agent boundaries with structured JSON input/output contracts</li>
+          <li>Hybrid AI design combining LLM reasoning with deterministic scoring</li>
+        </ul>
+      
+        <p><strong>Key Engineering:</strong></p>
+        <ul>
+          <li>Built parsing pipeline for converting unreliable LLM output into validated JSON</li>
+          <li>Moved logic from prompt layer → backend orchestration for reliability</li>
+          <li>Designed containerised runtime (FastAPI) integrated with AWS Bedrock</li>
+        </ul>
+      
+        <p><strong>Impact:</strong></p>
+        <ul>
+          <li>Transformed non-deterministic LLM responses into production-usable outputs</li>
+          <li>Scaled system from 3 → 10+ agents with stable coordination</li>
+          <li>Enabled repeatable, testable AI decision pipelines</li>
         </ul>
       </div>
-    </div>
 
     <div class="card">
-      <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
-      <p>Hybrid AI system combining LLM reasoning with deterministic logic.</p>
-
-      <div class="tags">
-        <span>LLM</span>
-        <span>Decision</span>
-        <span>Validation</span>
-      </div>
-
+        <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
+        <p>
+        Hybrid AI system combining LLM reasoning with deterministic logic for financial decision evaluation.
+        </p>
+        
+        <div class="tags">
+          <span>LLM</span>
+          <span>Decision Engine</span>
+          <span>Validation</span>
+        </div>
       <div class="cta">
         <button class="btn" onclick="toggleCard(this)">
           View Details <span class="arrow"></span>
@@ -219,19 +235,30 @@
       <div class="details">
         <p><strong>Architecture:</strong></p>
         <div class="flow">
-          Data → Processing → Evaluation → Decision Output
+          Market Data → Evaluation Agents → Scoring Engine → Decision Output
         </div>
-
-        <p><strong>Key Features:</strong></p>
+      
+        <p><strong>System Design:</strong></p>
         <ul>
-          <li>Deterministic validation layer</li>
-          <li>Structured insight generation</li>
-          <li>Modular pipeline design</li>
+          <li>Multi-agent evaluation across multiple financial indicators</li>
+          <li>Deterministic scoring model with threshold-based decisioning</li>
+          <li>No inter-agent dependency to prevent cascading inconsistencies</li>
         </ul>
-      </div>
-    </div>
-
-  </div>
+      
+        <p><strong>Key Engineering:</strong></p>
+        <ul>
+          <li>Designed structured evaluation pipeline with fixed input/output schema</li>
+          <li>Ensured repeatability: same input → same output</li>
+          <li>Built validation layer for handling edge cases and incomplete data</li>
+        </ul>
+      
+        <p><strong>Impact:</strong></p>
+        <ul>
+          <li>Eliminated hallucination risk through controlled evaluation</li>
+          <li>Improved consistency and reliability of AI-driven decisions</li>
+          <li>Created extensible system for adding new strategies and indicators</li>
+        </ul>
+</div>
 
   <div class="section">
     <h2>Endpoints</h2>
