@@ -54,7 +54,6 @@
       border-radius: 12px;
       margin-bottom: 20px;
       border: 1px solid rgba(255,255,255,0.05);
-      cursor: pointer;
       transition: all 0.3s ease;
     }
 
@@ -72,29 +71,6 @@
 
     .status.stable {
       color: #38bdf8;
-    }
-
-    .expand-icon {
-      float: right;
-      font-size: 16px;
-      color: #64748b;
-      transition: transform 0.3s ease;
-    }
-
-    .card.active .expand-icon {
-      transform: rotate(180deg);
-      color: #38bdf8;
-    }
-
-    .hint {
-      font-size: 12px;
-      color: #64748b;
-      margin-top: -5px;
-      margin-bottom: 10px;
-    }
-
-    .card:hover .hint {
-      color: #94a3b8;
     }
 
     .details {
@@ -135,6 +111,23 @@
     .links a:hover {
       text-decoration: underline;
     }
+
+    .btn {
+      margin-top: 12px;
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(56,189,248,0.3);
+      background: rgba(56,189,248,0.05);
+      color: #38bdf8;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: rgba(56,189,248,0.15);
+      border-color: rgba(56,189,248,0.6);
+    }
   </style>
 </head>
 
@@ -148,14 +141,8 @@
   <div class="section">
     <h2>Systems</h2>
 
-    <div class="card" onclick="toggleCard(this)">
-      <h3>
-        Agentic AI Platform 
-        <span class="status">● ACTIVE</span>
-        <span class="expand-icon">⌄</span>
-      </h3>
-      <p class="hint">Click to view architecture & details</p>
-
+    <div class="card">
+      <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
       <p>Multi-agent AI system with structured outputs.</p>
 
       <div class="tags">
@@ -163,6 +150,8 @@
         <span>Multi-Agent</span>
         <span>Deterministic</span>
       </div>
+
+      <button class="btn" onclick="toggleCard(this)">View Details</button>
 
       <div class="details">
         <p><strong>Architecture:</strong></p>
@@ -179,14 +168,8 @@
       </div>
     </div>
 
-    <div class="card" onclick="toggleCard(this)">
-      <h3>
-        Options Decision AI System 
-        <span class="status stable">● STABLE</span>
-        <span class="expand-icon">⌄</span>
-      </h3>
-      <p class="hint">Click to view architecture & details</p>
-
+    <div class="card">
+      <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
       <p>Hybrid AI system combining LLM reasoning with deterministic logic.</p>
 
       <div class="tags">
@@ -194,6 +177,8 @@
         <span>Decision</span>
         <span>Validation</span>
       </div>
+
+      <button class="btn" onclick="toggleCard(this)">View Details</button>
 
       <div class="details">
         <p><strong>Architecture:</strong></p>
@@ -228,7 +213,8 @@
 </div>
 
 <script>
-  function toggleCard(card) {
+  function toggleCard(button) {
+    const card = button.closest(".card");
     card.classList.toggle("active");
   }
 </script>
