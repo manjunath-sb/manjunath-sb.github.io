@@ -85,7 +85,7 @@
     }
 
     .card.active .details {
-      max-height: 300px;
+      max-height: 600px;
     }
 
     .tags span {
@@ -171,7 +171,7 @@
   <div class="section">
     <h2>Systems</h2>
 
-    <!-- CARD 1 -->
+    <!-- Agentic AI -->
     <div class="card">
       <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
       <p>
@@ -195,10 +195,31 @@
         <div class="flow">
           Input → Orchestrator → Parallel Agents → Aggregator → Structured Output
         </div>
+
+        <p><strong>System Design:</strong></p>
+        <ul>
+          <li>Orchestrator–worker–aggregator architecture with parallel execution</li>
+          <li>Strict agent boundaries with structured JSON contracts</li>
+          <li>Hybrid AI design combining LLM + deterministic scoring</li>
+        </ul>
+
+        <p><strong>Key Engineering:</strong></p>
+        <ul>
+          <li>Parsing pipeline: raw LLM → structured JSON</li>
+          <li>Moved logic from prompts → backend orchestration</li>
+          <li>Containerised runtime using FastAPI + Bedrock</li>
+        </ul>
+
+        <p><strong>Impact:</strong></p>
+        <ul>
+          <li>Converted unreliable LLM outputs into production-grade results</li>
+          <li>Scaled from 3 → 10+ agents</li>
+          <li>Enabled repeatable AI pipelines</li>
+        </ul>
       </div>
     </div>
 
-    <!-- CARD 2 -->
+    <!-- Options AI -->
     <div class="card">
       <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
       <p>
@@ -220,8 +241,29 @@
       <div class="details">
         <p><strong>Architecture:</strong></p>
         <div class="flow">
-          Market Data → Evaluation Agents → Scoring Engine → Decision Output
+          Market Data → Agents → Scoring → Decision Output
         </div>
+
+        <p><strong>System Design:</strong></p>
+        <ul>
+          <li>Multi-agent evaluation across indicators</li>
+          <li>Deterministic scoring with thresholds</li>
+          <li>No inter-agent dependency</li>
+        </ul>
+
+        <p><strong>Key Engineering:</strong></p>
+        <ul>
+          <li>Structured input/output schema</li>
+          <li>Same input → same output guarantee</li>
+          <li>Robust validation layer</li>
+        </ul>
+
+        <p><strong>Impact:</strong></p>
+        <ul>
+          <li>Removed hallucination risk</li>
+          <li>Improved decision reliability</li>
+          <li>Extensible for new strategies</li>
+        </ul>
       </div>
     </div>
 
