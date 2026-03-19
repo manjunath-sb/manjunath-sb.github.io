@@ -48,6 +48,10 @@
       padding-left: 10px;
     }
 
+    .section {
+      margin-top: 40px;
+    }
+
     .card {
       background: linear-gradient(145deg, #1e293b, #0f172a);
       padding: 22px;
@@ -122,16 +126,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-
       padding: 6px 12px;
       font-size: 12px;
       font-weight: 500;
       border-radius: 6px;
-
       border: 1px solid rgba(56,189,248,0.4);
       background: rgba(56,189,248,0.08);
       color: #38bdf8;
-
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -141,7 +142,6 @@
       border-color: rgba(56,189,248,0.7);
     }
 
-    /* Clean chevron arrow */
     .arrow {
       width: 6px;
       height: 6px;
@@ -164,68 +164,53 @@
 <div class="container">
 
   <h1>Manjunath S B</h1>
-  <p>Applied AI Engineer | Multi-Agent Systems | LLM Backend</p>
+  <p>
+    Designing production-grade AI systems focused on deterministic decision-making, multi-agent orchestration, and scalable backend architectures.
+  </p>
 
   <div class="section">
     <h2>Systems</h2>
 
+    <!-- CARD 1 -->
     <div class="card">
-        <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
-        <p>
+      <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
+      <p>
         Production-grade multi-agent AI system designed for structured decision-making from unstructured inputs.
-        </p>
-        
-        <div class="tags">
-          <span>Multi-Agent</span>
-          <span>AWS Bedrock</span>
-          <span>Deterministic AI</span>
-        </div>
+      </p>
+
+      <div class="tags">
+        <span>Multi-Agent</span>
+        <span>AWS Bedrock</span>
+        <span>Deterministic AI</span>
+      </div>
 
       <div class="cta">
         <button class="btn" onclick="toggleCard(this)">
           View Details <span class="arrow"></span>
         </button>
       </div>
-      
+
       <div class="details">
         <p><strong>Architecture:</strong></p>
         <div class="flow">
           Input → Orchestrator → Parallel Agents → Aggregator → Structured Output
         </div>
-      
-        <p><strong>System Design:</strong></p>
-        <ul>
-          <li>Orchestrator–worker–aggregator architecture with parallel execution</li>
-          <li>Strict agent boundaries with structured JSON input/output contracts</li>
-          <li>Hybrid AI design combining LLM reasoning with deterministic scoring</li>
-        </ul>
-      
-        <p><strong>Key Engineering:</strong></p>
-        <ul>
-          <li>Built parsing pipeline for converting unreliable LLM output into validated JSON</li>
-          <li>Moved logic from prompt layer → backend orchestration for reliability</li>
-          <li>Designed containerised runtime (FastAPI) integrated with AWS Bedrock</li>
-        </ul>
-      
-        <p><strong>Impact:</strong></p>
-        <ul>
-          <li>Transformed non-deterministic LLM responses into production-usable outputs</li>
-          <li>Scaled system from 3 → 10+ agents with stable coordination</li>
-          <li>Enabled repeatable, testable AI decision pipelines</li>
-        </ul>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
+      <p>
+        Hybrid AI system combining LLM reasoning with deterministic logic for financial decision evaluation.
+      </p>
+
+      <div class="tags">
+        <span>LLM</span>
+        <span>Decision Engine</span>
+        <span>Validation</span>
       </div>
 
-    <div class="card">
-        <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
-        <p>
-        Hybrid AI system combining LLM reasoning with deterministic logic for financial decision evaluation.
-        </p>
-        
-        <div class="tags">
-          <span>LLM</span>
-          <span>Decision Engine</span>
-          <span>Validation</span>
-        </div>
       <div class="cta">
         <button class="btn" onclick="toggleCard(this)">
           View Details <span class="arrow"></span>
@@ -237,28 +222,10 @@
         <div class="flow">
           Market Data → Evaluation Agents → Scoring Engine → Decision Output
         </div>
-      
-        <p><strong>System Design:</strong></p>
-        <ul>
-          <li>Multi-agent evaluation across multiple financial indicators</li>
-          <li>Deterministic scoring model with threshold-based decisioning</li>
-          <li>No inter-agent dependency to prevent cascading inconsistencies</li>
-        </ul>
-      
-        <p><strong>Key Engineering:</strong></p>
-        <ul>
-          <li>Designed structured evaluation pipeline with fixed input/output schema</li>
-          <li>Ensured repeatability: same input → same output</li>
-          <li>Built validation layer for handling edge cases and incomplete data</li>
-        </ul>
-      
-        <p><strong>Impact:</strong></p>
-        <ul>
-          <li>Eliminated hallucination risk through controlled evaluation</li>
-          <li>Improved consistency and reliability of AI-driven decisions</li>
-          <li>Created extensible system for adding new strategies and indicators</li>
-        </ul>
-</div>
+      </div>
+    </div>
+
+  </div>
 
   <div class="section">
     <h2>Endpoints</h2>
