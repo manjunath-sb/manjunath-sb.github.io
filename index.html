@@ -18,8 +18,20 @@
     }
 
     h1 {
-      font-size: 42px;
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -1px;
       margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #cbd5f5;
+      line-height: 1.7;
     }
 
     .subtitle {
@@ -37,20 +49,33 @@
       margin-bottom: 20px;
       border-left: 4px solid #38bdf8;
       padding-left: 10px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: #38bdf8;
+      box-shadow: 0 0 10px #38bdf8;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      padding: 22px;
+      border-radius: 12px;
       margin-bottom: 20px;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      background: #334155;
-      box-shadow: 0 0 20px rgba(56,189,248,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4),
+                  0 0 25px rgba(56,189,248,0.15);
     }
 
     .links a {
@@ -83,20 +108,35 @@
 
     .node {
       background: #1e293b;
-      padding: 10px 16px;
-      border-radius: 6px;
+      padding: 12px 18px;
+      border-radius: 8px;
       font-size: 14px;
       border: 1px solid #334155;
-      transition: 0.3s;
+      transition: all 0.25s ease;
     }
 
     .node:hover {
       background: #334155;
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 15px rgba(56,189,248,0.2);
     }
 
     .arrow {
       color: #64748b;
+    }
+
+    .tags {
+      margin-top: 12px;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: rgba(56,189,248,0.1);
+      color: #38bdf8;
+      padding: 4px 10px;
+      font-size: 12px;
+      border-radius: 6px;
+      margin-right: 6px;
     }
   </style>
 </head>
@@ -110,8 +150,8 @@
     Applied AI Engineer | Multi-Agent Systems | LLM Backend
   </p>
 
-  <p>
-    Building production-grade AI systems with deterministic outputs and scalable backend architectures.
+  <p style="max-width: 700px; font-size: 16px;">
+    Building production-grade AI systems focused on deterministic decision-making, structured outputs, and scalable multi-agent architectures.
   </p>
 
   <div class="section">
@@ -122,6 +162,11 @@
       <p>
         Multi-agent AI system with orchestrator–worker–aggregator architecture, structured outputs, and backend orchestration.
       </p>
+      <div class="tags">
+        <span>LLM</span>
+        <span>Multi-Agent</span>
+        <span>Deterministic</span>
+      </div>
     </div>
 
     <div class="card">
@@ -129,6 +174,11 @@
       <p>
         Hybrid AI system combining LLM reasoning with deterministic evaluation and structured pipelines.
       </p>
+      <div class="tags">
+        <span>LLM</span>
+        <span>Decision System</span>
+        <span>Validation</span>
+      </div>
     </div>
 
   </div>
