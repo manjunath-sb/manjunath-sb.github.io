@@ -1,295 +1,327 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Manjunath S B</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manjunath S B — Applied AI Engineer building AI-powered applications, agent workflows, APIs and data-driven interfaces.">
+  <meta name="theme-color" content="#070b14">
+  <title>Manjunath S B — Applied AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #070b14;
+      --bg-soft: #0a1120;
+      --panel: rgba(15, 25, 43, .78);
+      --panel-strong: #101a2c;
+      --text: #f3f7ff;
+      --muted: #9baac1;
+      --line: rgba(151, 180, 225, .14);
+      --blue: #54a3ff;
+      --cyan: #40e0d0;
+      --violet: #9c72ff;
+      --green: #3ce5b0;
+      --max: 1180px;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-      background-color: #0f172a;
-      color: #e2e8f0;
-
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-
-      background-size: 40px 40px;
-      background-attachment: fixed;
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 76% 4%, rgba(47, 99, 206, .16), transparent 34rem),
+        radial-gradient(ellipse at 3% 35%, rgba(41, 199, 209, .07), transparent 30rem),
+        var(--bg);
+      font-family: "DM Sans", system-ui, sans-serif; line-height: 1.65;
     }
-
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(56,189,248,0.06), transparent 60%);
-      pointer-events: none;
+      content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .17; z-index: -1;
+      background-image: radial-gradient(rgba(116, 160, 225, .42) .7px, transparent .7px);
+      background-size: 26px 26px; mask-image: linear-gradient(to bottom, black, transparent 75%);
     }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
-      position: relative;
-      z-index: 1;
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; border-radius: 5px; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(151,180,225,.08);
+      background: rgba(7, 11, 20, .78); backdrop-filter: blur(18px);
     }
-
-    h1 {
-      font-size: 44px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
+    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font: 700 1.04rem "Space Grotesk", sans-serif; letter-spacing: -.03em; white-space: nowrap; }
+    .brand span { color: var(--blue); }
+    .navlinks { display: flex; gap: clamp(14px, 2.4vw, 30px); align-items: center; }
+    .navlinks a { color: #c4cfe0; font-size: .86rem; transition: color .2s; }
+    .navlinks a:hover { color: white; }
+    .nav-cta, .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 13px;
+      padding: 11px 17px; font-weight: 700; font-size: .88rem; border: 1px solid var(--line); transition: transform .2s, border-color .2s, background .2s;
     }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
+    .nav-cta, .button.primary { border: 0; color: white; background: linear-gradient(110deg, #2878ff, #8557f6); box-shadow: 0 8px 30px rgba(63, 100, 255, .18); }
+    .button.secondary { background: rgba(17, 27, 45, .6); color: #e4edfa; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); }
+    .hero { padding: 78px 0 54px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 38px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #c8d5e8; text-transform: uppercase; font-size: .76rem; font-weight: 700; letter-spacing: .13em; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 16px rgba(60,229,176,.7); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin: 17px 0 15px; font: 700 clamp(3.25rem, 6.5vw, 5.5rem)/.98 "Space Grotesk", sans-serif; letter-spacing: -.065em; }
+    .gradient-text { background: linear-gradient(105deg, #5eb4ff 10%, #8e78ff 72%, #c2a2ff); color: transparent; -webkit-background-clip: text; background-clip: text; }
+    .hero h2 { max-width: 650px; font: 600 clamp(1.18rem, 2.2vw, 1.55rem)/1.35 "Space Grotesk", sans-serif; letter-spacing: -.025em; margin-bottom: 15px; }
+    .hero-copy { max-width: 620px; color: var(--muted); font-size: 1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .hero-tags { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 30px; }
+    .mini-skill { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .mini-icon { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 12px; flex: 0 0 auto; background: linear-gradient(145deg, rgba(77,139,255,.16), rgba(148,102,255,.1)); border: 1px solid var(--line); color: #83b8ff; font-size: 1.08rem; }
+    .mini-skill strong { display: block; font-size: .78rem; line-height: 1.25; }
+    .mini-skill small { display: block; color: var(--muted); font-size: .69rem; margin-top: 3px; }
+    .workflow {
+      min-height: 350px; position: relative; border: 1px solid rgba(101,157,255,.16); border-radius: 26px;
+      background: linear-gradient(145deg, rgba(14,28,49,.86), rgba(8,15,29,.65));
+      box-shadow: inset 0 1px rgba(255,255,255,.04), 0 25px 90px rgba(0,0,0,.2); overflow: hidden; padding: 25px;
     }
-
-    .section {
-      margin-top: 40px;
+    .workflow::before { content:""; position:absolute; inset:0; opacity:.5; background-image: radial-gradient(rgba(83,164,255,.5) .7px, transparent .7px); background-size: 20px 20px; mask-image: radial-gradient(ellipse at center, black, transparent 75%); }
+    .flow-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .86fr 1fr; align-items: center; gap: 10px; min-height: 300px; }
+    .flow-stack { display: grid; gap: 13px; }
+    .flow-node { padding: 13px 12px; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(126,166,224,.2); background: rgba(12,24,43,.91); border-radius: 13px; font-size: .75rem; box-shadow: 0 8px 25px rgba(0,0,0,.16); }
+    .flow-node .glyph { color: #8ab8ff; font-size: 1.1rem; }
+    .flow-core { text-align: center; padding: 24px 10px; border-radius: 19px; border: 1px solid rgba(76,199,255,.6); background: linear-gradient(145deg, rgba(20,72,112,.8), rgba(39,37,104,.72)); box-shadow: 0 0 40px rgba(40,133,255,.18); }
+    .brain { font-size: 2.5rem; line-height: 1.2; color: #73dfff; }
+    .flow-core strong { display: block; font: 600 .88rem/1.35 "Space Grotesk", sans-serif; margin-top: 12px; }
+    .flow-label { position: absolute; top: 14px; right: 17px; color: #7793b7; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; }
+    section { padding: 48px 0 14px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; }
+    .section-kicker { color: var(--blue); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .13em; margin-bottom: 8px; }
+    h2.section-title { font: 600 clamp(1.7rem, 3vw, 2.25rem)/1.2 "Space Grotesk", sans-serif; letter-spacing: -.045em; margin: 0; }
+    .section-sub { max-width: 620px; color: var(--muted); margin: 9px 0 0; }
+    .about-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; }
+    .glass { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(18,30,50,.82), rgba(10,18,32,.82)); }
+    .about-main { padding: 27px; }
+    .about-main h3 { font: 600 1.35rem/1.3 "Space Grotesk", sans-serif; letter-spacing: -.025em; margin-bottom: 12px; }
+    .about-main p { color: var(--muted); }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
+    .stat { padding: 13px; border-radius: 14px; border: 1px solid rgba(126,166,224,.12); background: rgba(7,14,26,.45); }
+    .stat b { display: block; font: 600 1rem "Space Grotesk", sans-serif; }
+    .stat span { color: var(--muted); font-size: .75rem; }
+    .role-card { padding: 24px; border-color: rgba(64,224,208,.32); box-shadow: inset 0 0 35px rgba(37,161,181,.04); }
+    .role-status { display: flex; align-items: center; gap: 8px; color: var(--green); text-transform: uppercase; font-size: .74rem; letter-spacing: .1em; font-weight: 700; margin-bottom: 17px; }
+    .role-card h3 { margin-bottom: 3px; font: 600 1.15rem "Space Grotesk", sans-serif; }
+    .role-company { color: #8ebeff; font-size: .88rem; }
+    .role-date { color: var(--muted); font-size: .8rem; margin: 4px 0 14px; }
+    .role-card p { color: var(--muted); font-size: .88rem; margin-bottom: 0; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .project { overflow: hidden; display: flex; flex-direction: column; min-height: 270px; transition: transform .22s, border-color .22s; }
+    .project:hover { transform: translateY(-4px); border-color: rgba(86,162,255,.42); }
+    .project-top { padding: 21px 21px 0; }
+    .project-content { padding: 14px 21px 21px; display: flex; flex-direction: column; flex: 1; }
+    .project-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; font-size: 1.4rem; background: linear-gradient(145deg, rgba(69,143,255,.2), rgba(151,101,255,.16)); border: 1px solid rgba(122,166,255,.18); margin-bottom: 15px; }
+    .project h3 { font: 600 1.12rem "Space Grotesk", sans-serif; letter-spacing: -.02em; margin-bottom: 8px; }
+    .project p { color: var(--muted); font-size: .88rem; margin-bottom: 15px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 17px; }
+    .tags span { color: #b7c8df; background: rgba(131,160,201,.09); border: 1px solid rgba(131,160,201,.12); padding: 3px 8px; border-radius: 999px; font-size: .69rem; }
+    .project-link { color: #8bbcff; font-weight: 700; font-size: .83rem; margin-top: auto; }
+    .experience-list { display: grid; gap: 12px; }
+    .experience-item { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 19px 22px; align-items: start; }
+    .experience-item h3 { font: 600 1rem "Space Grotesk", sans-serif; margin-bottom: 3px; }
+    .experience-item p { color: var(--muted); margin: 7px 0 0; font-size: .88rem; }
+    .date { color: #9db0cc; font-size: .78rem; white-space: nowrap; }
+    .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
+    .skill-card { padding: 19px; }
+    .skill-card .mini-icon { margin-bottom: 12px; }
+    .skill-card h3 { font: 600 .98rem "Space Grotesk", sans-serif; margin-bottom: 7px; }
+    .skill-card p { color: var(--muted); font-size: .82rem; margin-bottom: 0; }
+    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 28px; border-color: rgba(88,151,255,.28); background: radial-gradient(ellipse at 100% 0%, rgba(105,76,255,.15), transparent 55%), var(--panel); }
+    .contact-panel h2 { font: 600 clamp(1.5rem, 3vw, 2rem) "Space Grotesk", sans-serif; letter-spacing: -.04em; margin-bottom: 8px; }
+    .contact-panel p { color: var(--muted); margin-bottom: 0; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { padding: 30px 0 38px; color: #71829c; font-size: .78rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid var(--line); padding-top: 20px; }
+    @media (max-width: 950px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 55px; }
+      .workflow { max-width: 700px; width: 100%; }
+      .project-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     }
-
-    .card {
-      background: linear-gradient(145deg, #1e293b, #0f172a);
-      padding: 22px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.3s ease;
+    @media (max-width: 650px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav { min-height: 62px; }
+      .navlinks { display: none; }
+      .nav-cta { padding: 9px 12px; font-size: .8rem; }
+      .hero { padding: 45px 0 28px; }
+      h1 { font-size: clamp(3rem, 14vw, 4.3rem); }
+      .hero-tags { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .workflow { padding: 14px; min-height: 270px; }
+      .flow-inner { gap: 6px; min-height: 250px; }
+      .flow-node { padding: 9px 7px; font-size: .63rem; gap: 5px; border-radius: 10px; }
+      .flow-node .glyph { font-size: .9rem; }
+      .flow-core { padding: 18px 6px; }
+      .flow-core strong { font-size: .72rem; }
+      .brain { font-size: 1.9rem; }
+      section { padding-top: 37px; }
+      .about-grid, .project-grid, .skills-grid { grid-template-columns: 1fr; }
+      .stat-row { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; gap: 10px; }
+      .experience-item { grid-template-columns: 1fr; gap: 3px; }
+      .date { white-space: normal; }
+      .contact-panel { align-items: start; flex-direction: column; padding: 23px; }
+      .footer-inner { flex-direction: column; }
     }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 12px rgba(56,189,248,0.08);
-      border-color: rgba(56,189,248,0.2);
-    }
-
-    .status {
-      font-size: 12px;
-      margin-left: 10px;
-      color: #22c55e;
-    }
-
-    .status.stable {
-      color: #38bdf8;
-    }
-
-    .details {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      margin-top: 10px;
-    }
-
-    .card.active .details {
-      max-height: 600px;
-    }
-
-    .tags span {
-      display: inline-block;
-      background: rgba(56,189,248,0.08);
-      color: #38bdf8;
-      padding: 4px 10px;
-      font-size: 12px;
-      border-radius: 6px;
-      margin-right: 6px;
-      margin-top: 8px;
-    }
-
-    .flow {
-      margin-top: 10px;
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    .links a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 14px;
-      margin-right: 20px;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    .cta {
-      margin-top: 14px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 500;
-      border-radius: 6px;
-      border: 1px solid rgba(56,189,248,0.4);
-      background: rgba(56,189,248,0.08);
-      color: #38bdf8;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background: rgba(56,189,248,0.18);
-      border-color: rgba(56,189,248,0.7);
-    }
-
-    .arrow {
-      width: 6px;
-      height: 6px;
-      border-right: 2px solid rgba(56,189,248,0.9);
-      border-bottom: 2px solid rgba(56,189,248,0.9);
-      transform: rotate(45deg);
-      display: inline-block;
-      transition: transform 0.3s ease;
-      margin-top: -2px;
-    }
-
-    .card.active .arrow {
-      transform: rotate(225deg);
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
-
 <body>
-
-<div class="container">
-
-  <h1>Manjunath S B</h1>
-  <p>
-    Designing production-grade AI systems focused on deterministic decision-making, multi-agent orchestration, and scalable backend architectures.
-  </p>
-
-  <div class="section">
-    <h2>Systems</h2>
-
-    <!-- Agentic AI -->
-    <div class="card">
-      <h3>Agentic AI Platform <span class="status">● ACTIVE</span></h3>
-      <p>
-        Production-grade multi-agent AI system designed for structured decision-making from unstructured inputs.
-      </p>
-
-      <div class="tags">
-        <span>Multi-Agent</span>
-        <span>AWS Bedrock</span>
-        <span>Deterministic AI</span>
-      </div>
-
-      <div class="cta">
-        <button class="btn" onclick="toggleCard(this)">
-          View Details <span class="arrow"></span>
-        </button>
-      </div>
-
-      <div class="details">
-        <p><strong>Architecture:</strong></p>
-        <div class="flow">
-          Input → Orchestrator → Parallel Agents → Aggregator → Structured Output
-        </div>
-
-        <p><strong>System Design:</strong></p>
-        <ul>
-          <li>Orchestrator–worker–aggregator architecture with parallel execution</li>
-          <li>Strict agent boundaries with structured JSON contracts</li>
-          <li>Hybrid AI design combining LLM + deterministic scoring</li>
-        </ul>
-
-        <p><strong>Key Engineering:</strong></p>
-        <ul>
-          <li>Parsing pipeline: raw LLM → structured JSON</li>
-          <li>Moved logic from prompts → backend orchestration</li>
-          <li>Containerised runtime using FastAPI + Bedrock</li>
-        </ul>
-
-        <p><strong>Impact:</strong></p>
-        <ul>
-          <li>Converted unreliable LLM outputs into production-grade results</li>
-          <li>Scaled from 3 → 10+ agents</li>
-          <li>Enabled repeatable AI pipelines</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Options AI -->
-    <div class="card">
-      <h3>Options Decision AI System <span class="status stable">● STABLE</span></h3>
-      <p>
-        Hybrid AI system combining LLM reasoning with deterministic logic for financial decision evaluation.
-      </p>
-
-      <div class="tags">
-        <span>LLM</span>
-        <span>Decision Engine</span>
-        <span>Validation</span>
-      </div>
-
-      <div class="cta">
-        <button class="btn" onclick="toggleCard(this)">
-          View Details <span class="arrow"></span>
-        </button>
-      </div>
-
-      <div class="details">
-        <p><strong>Architecture:</strong></p>
-        <div class="flow">
-          Market Data → Agents → Scoring → Decision Output
-        </div>
-
-        <p><strong>System Design:</strong></p>
-        <ul>
-          <li>Multi-agent evaluation across indicators</li>
-          <li>Deterministic scoring with thresholds</li>
-          <li>No inter-agent dependency</li>
-        </ul>
-
-        <p><strong>Key Engineering:</strong></p>
-        <ul>
-          <li>Structured input/output schema</li>
-          <li>Same input → same output guarantee</li>
-          <li>Robust validation layer</li>
-        </ul>
-
-        <p><strong>Impact:</strong></p>
-        <ul>
-          <li>Removed hallucination risk</li>
-          <li>Improved decision reliability</li>
-          <li>Extensible for new strategies</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section">
-    <h2>Endpoints</h2>
-
-    <div class="card" style="cursor: default;">
-      <p style="margin-bottom: 10px;">External Links</p>
-
-      <div class="links">
-        <a href="https://github.com/manjunath-sb" target="_blank">GitHub ↗</a>
-        <a href="https://linkedin.com/in/manjunath-sb" target="_blank">LinkedIn ↗</a>
-      </div>
+  <div class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home">Manjunath <span>S B</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 
-</div>
+  <header class="hero wrap" id="home">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Applied AI Engineer</div>
+        <h1>Manjunath <span class="gradient-text">S B</span></h1>
+        <h2>Building AI-powered applications that connect language models, data and real-world workflows.</h2>
+        <p class="hero-copy">I build practical AI applications and data-driven software, connecting LLMs, agent workflows, backend APIs and user-facing interfaces. Currently working as a Founding AI Engineer at Pravar AI on conversational AI and guided financial-planning workflows.</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">Explore my work <span aria-hidden="true">→</span></a>
+          <a class="button secondary" href="https://github.com/manjunath-sb" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span> GitHub profile</a>
+        </div>
+        <div class="hero-tags">
+          <div class="mini-skill"><span class="mini-icon" aria-hidden="true">⌘</span><div><strong>AI Applications</strong><small>LLMs · Agent workflows</small></div></div>
+          <div class="mini-skill"><span class="mini-icon" aria-hidden="true">▥</span><div><strong>Data & Analytics</strong><small>SQL · BigQuery</small></div></div>
+          <div class="mini-skill"><span class="mini-icon" aria-hidden="true">⌘</span><div><strong>Full Stack</strong><small>APIs · React</small></div></div>
+          <div class="mini-skill"><span class="mini-icon" aria-hidden="true">ϟ</span><div><strong>Engineering</strong><small>Testing · Debugging</small></div></div>
+        </div>
+      </div>
 
-<script>
-  function toggleCard(button) {
-    const card = button.closest(".card");
-    card.classList.toggle("active");
-  }
-</script>
+      <div class="workflow" aria-label="Illustration of an AI application workflow">
+        <div class="flow-label">Application workflow</div>
+        <div class="flow-inner">
+          <div class="flow-stack">
+            <div class="flow-node"><span class="glyph" aria-hidden="true">◉</span>User query</div>
+            <div class="flow-node"><span class="glyph" aria-hidden="true">▤</span>Intent classification</div>
+            <div class="flow-node"><span class="glyph" aria-hidden="true">⑂</span>Agent routing</div>
+            <div class="flow-node"><span class="glyph" aria-hidden="true">▤</span>Data & tools</div>
+          </div>
+          <div class="flow-core"><div class="brain" aria-hidden="true">✳</div><strong>LLM<br>Agent Workflow</strong></div>
+          <div class="flow-stack">
+            <div class="flow-node"><span class="glyph" aria-hidden="true">▧</span>Structured output</div>
+            <div class="flow-node"><span class="glyph" aria-hidden="true">⚙</span>API integration</div>
+            <div class="flow-node"><span class="glyph" aria-hidden="true">▣</span>User interface</div>
+            <div class="flow-node"><span class="glyph" aria-hidden="true">▥</span>Analytics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <main class="wrap">
+    <section id="about">
+      <div class="about-grid">
+        <div class="glass about-main">
+          <div class="section-kicker">About me</div>
+          <h3>Applied AI engineering with a focus on practical outcomes.</h3>
+          <p>My work spans LLM integration, agent workflows, Python API development, frontend integration, data processing and analytics. I use coding agents extensively in my development workflow, with a focus on understanding, testing and debugging the resulting implementation.</p>
+          <div class="stat-row">
+            <div class="stat"><b>AI</b><span>Application development</span></div>
+            <div class="stat"><b>Data</b><span>Analytics & automation</span></div>
+            <div class="stat"><b>Full stack</b><span>APIs & frontend</span></div>
+          </div>
+        </div>
+        <aside class="glass role-card">
+          <div class="role-status"><span class="dot"></span> Current role</div>
+          <h3>Founding AI Engineer</h3>
+          <div class="role-company">Pravar AI Intelligence Private Limited</div>
+          <div class="role-date">June 2026 — Present · Bengaluru, India</div>
+          <p>Building conversational AI and guided financial-planning workflows for wealth-management use cases, with application APIs and user-facing interfaces.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div><div class="section-kicker">Selected work</div><h2 class="section-title">Projects with a purpose.</h2><p class="section-sub">AI applications, multi-agent workflows and analytics systems. Public details are limited where work is private.</p></div>
+        <a class="project-link" href="https://github.com/manjunath-sb" target="_blank" rel="noopener noreferrer">More on GitHub ↗</a>
+      </div>
+      <div class="project-grid">
+        <article class="glass project">
+          <div class="project-top"><div class="project-icon" aria-hidden="true">◈</div><div class="tags"><span>AI Agents</span><span>Options Analysis</span><span>Python</span></div></div>
+          <div class="project-content">
+            <h3>Multi-agent options analysis</h3>
+            <p>A deployed AI-assisted decision-support system for options analysis using agent-driven reasoning, market data and structured outputs.</p>
+            <a class="project-link" href="https://github.com/manjunath-sb" target="_blank" rel="noopener noreferrer">Explore related work ↗</a>
+          </div>
+        </article>
+        <article class="glass project">
+          <div class="project-top"><div class="project-icon" aria-hidden="true">⌘</div><div class="tags"><span>Conversational AI</span><span>LLM Integration</span><span>APIs</span></div></div>
+          <div class="project-content">
+            <h3>Conversational AI workflows</h3>
+            <p>Application workflows connecting model interactions, routing, conversation context, backend APIs and user-facing interfaces.</p>
+            <a class="project-link" href="#experience">View relevant experience ↗</a>
+          </div>
+        </article>
+        <article class="glass project">
+          <div class="project-top"><div class="project-icon" aria-hidden="true">▥</div><div class="tags"><span>Analytics</span><span>SQL</span><span>Visualisation</span></div></div>
+          <div class="project-content">
+            <h3>Analytics and reporting systems</h3>
+            <p>Data-driven tooling combining performance tracking, reporting automation, API integration and drill-down visualisation.</p>
+            <a class="project-link" href="https://github.com/manjunath-sb" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head"><div><div class="section-kicker">Career path</div><h2 class="section-title">Experience & foundations.</h2></div></div>
+      <div class="experience-list">
+        <article class="glass experience-item">
+          <div><h3>Founding AI Engineer · Pravar AI Intelligence Private Limited</h3><div class="role-company">Conversational AI, guided workflows and application integration</div><p>Python APIs, model-provider integration, routing and context handling, React/TypeScript interfaces, safeguards and automated testing.</p></div><div class="date">Jun 2026 — Present</div>
+        </article>
+        <article class="glass experience-item">
+          <div><h3>AI & software development · Project-based engagement</h3><div class="role-company">US-based business</div><p>Paid project-based work across a deployed multi-agent trading-analysis system and an independently implemented analytics system. This was a project engagement, not a formal employment relationship.</p></div><div class="date">Jul 2025 — May 2026</div>
+        </article>
+        <article class="glass experience-item">
+          <div><h3>Programmer Analyst · Cognizant</h3><div class="role-company">Data workflows and analytics</div><p>SQL and Python data workflows, BigQuery queries, reporting support and data validation.</p></div><div class="date">Sep 2022 — Jun 2023</div>
+        </article>
+        <article class="glass experience-item">
+          <div><h3>Software Engineer · Tech Mahindra</h3><div class="role-company">Reporting and data quality</div><p>Reporting automation, SQL/Python data transformation, validation checks and data-quality investigation.</p></div><div class="date">Sep 2021 — Sep 2022</div>
+        </article>
+        <article class="glass experience-item">
+          <div><h3>Assistant System Engineer · Tata Consultancy Services</h3><div class="role-company">Frontend and API integration</div><p>Data-driven frontend components, reusable UI elements and integration with backend APIs.</p></div><div class="date">Jan 2020 — Apr 2021</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head"><div><div class="section-kicker">Technical toolkit</div><h2 class="section-title">Tools I work with.</h2></div></div>
+      <div class="skills-grid">
+        <article class="glass skill-card"><div class="mini-icon" aria-hidden="true">✳</div><h3>AI application development</h3><p>LLM API integration, agent workflows, intent classification, structured outputs and prompt design.</p></article>
+        <article class="glass skill-card"><div class="mini-icon" aria-hidden="true">⌘</div><h3>Backend & frontend</h3><p>Python, FastAPI, REST APIs, TypeScript/JavaScript, React and Git.</p></article>
+        <article class="glass skill-card"><div class="mini-icon" aria-hidden="true">▥</div><h3>Data & analytics</h3><p>SQL, BigQuery, MySQL, Power BI, DAX, Excel and reporting automation.</p></article>
+        <article class="glass skill-card"><div class="mini-icon" aria-hidden="true">✓</div><h3>Testing & delivery</h3><p>Automated API and end-to-end testing, Playwright, debugging and validation.</p></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="glass contact-panel">
+        <div><div class="section-kicker">Next step</div><h2>Have an interesting AI problem?</h2><p>Open to relevant Applied AI Engineer, AI Engineer and AI Application Engineer opportunities.</p></div>
+        <div class="contact-links">
+          <a class="button primary" href="mailto:sb.manjunath29@gmail.com">Email me ↗</a>
+          <a class="button secondary" href="https://linkedin.com/in/manjunath-sb" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="button secondary" href="https://github.com/manjunath-sb" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap"><div class="footer-inner"><span>© <span id="year">2026</span> Manjunath S B</span><span>Designed around practical AI engineering.</span></div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
